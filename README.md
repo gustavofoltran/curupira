@@ -11,10 +11,10 @@
 - [@brunapaulo](https://github.com/brunapaulo)
 - [@fernando38954](https://github.com/fernando38954)
 - [@Gabriellimmaa](https://github.com/Gabriellimmaa)
+- [@gustavofoltran](https://github.com/gustavofoltran)
 - [@lorekozz](https://github.com/lorekozz)
 - [@lucas](https://www.instagram.com/franco.lucasr/)
 - [@Xnths](https://github.com/Xnths)
-- [@gustavofoltran](https://github.com/gustavofoltran)
 
 ##Plano geral para o repositório:
 (Vou utilizar esse arquivo em txt por que não sei escrever em markdown(ainda??))
