@@ -16,7 +16,7 @@
 - [@lucas](https://www.instagram.com/franco.lucasr/)
 - [@Xnths](https://github.com/Xnths)
 
-##Plano geral para o repositório:
+## Plano geral para o repositório:
 (Vou utilizar esse arquivo em txt por que não sei escrever em markdown(ainda??))
 em "code" ficarão as linhas de código colaboratias de back e front, bem como arquivos para facil acesso como resumo de reuniões e envios 
 em "issues" estarão as tasks, todos tem a permissão de editar, criar, e atribuir uma task a alguém
