@@ -3,7 +3,7 @@
 Área destinada a organização do projeto final e entregas parciais da disciplina MAC0332
 
 
-![Logo](https://www.deviante.com.br/wp-content/uploads/2021/02/25.-Engenharia-de-Software.png)
+![Logo]([https://www.deviante.com.br/wp-content/uploads/2021/02/25.-Engenharia-de-Software.png](https://lh3.googleusercontent.com/proxy/2J4-iWlaypK_wwWf5nx4LDir3tPw9NrLCgjSWmViuDM8ADv3HLQr2O23TyxZAdjfTfeaK-L9RIx7090dveSzl6l-7oOfZ0sPRZAQSym5NzQu3mCVpPNufBxoK4zsXdmsV-iYEc02mDy5VRTRsySDBhFJ1ABkm7nP3fLhEA))
 
 
 ## Autores
