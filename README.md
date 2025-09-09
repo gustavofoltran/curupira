@@ -3,8 +3,7 @@
 Área destinada a organização do projeto final e entregas parciais da disciplina MAC0332
 
 
-![Logo](https://cdn.hackaday.io/images/4049831560526224990.jpg)
-<img src="https://cdn.hackaday.io/images/4049831560526224990.jpg" width="638" height="478.5">
+![Logo]<img src="https://cdn.hackaday.io/images/4049831560526224990.jpg" width="638" height="478.5">
 
 ## Autores
 
