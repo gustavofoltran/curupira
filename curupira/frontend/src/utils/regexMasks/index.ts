@@ -1,0 +1,6 @@
+export { cnpjRegexMask } from './cnpj.regexMasks'
+export { cpfRegexMask } from './cpf.regexMasks'
+export { phoneRegexMask } from './phone.regexMasks'
+export { cepRegexMask } from './cep.regexMasks'
+export { documentRegexMask } from './document.regexMasks'
+export { paycardRegexMask } from './paycard.regexMasks'

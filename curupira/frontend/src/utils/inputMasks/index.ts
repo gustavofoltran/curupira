@@ -1,0 +1,8 @@
+export { agencyInputMask } from './agency.inputMask'
+export { cellPhoneInputMask } from './cellPhone.inputMask'
+export { cepInputMask } from './cep.inputMask'
+export { cnpjInputMask } from './cnpj.inputMask'
+export { cpfInputMask } from './cpf.inputMask'
+export { documentInputMask } from './document.inputMask'
+export { landlinePhoneInputMask } from './landlinePhone.inputMask'
+export { zipCodeInputMask } from './zipCode.inputMask'
