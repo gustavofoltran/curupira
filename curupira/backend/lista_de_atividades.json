@@ -1,0 +1,83 @@
+{
+  "activitiesName":,
+  "activity_catalog":"
+        },
+        {
+          "name": "Gás de Cozinha (GLP) Residencial",
+          "activity_id": "fuel-type_liquefied_petroleum_gases_lpg-fuel_use_stationary_combustion",
+          "unit_type": "Energy",
+          "unit": "MMBTU",
+          "source": "EPA",
+          "region": "US",
+          "notes": "Fator de base para queima de GLP. Fonte confiável para uso como proxy.[1]"
+        }
+      ]
+    },
+    {
+      "category": "Transporte",
+      "activities":"
+        },
+        {
+          "name": "Ônibus Urbano (Proxy)",
+          "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+          "unit_type": "Passenger Over Distance",
+          "unit": "passenger-mile",
+          "source": "EPA",
+          "region": "US",
+          "notes": "Fator de base para ônibus. Usar como ponto de partida para a modelagem da frota da SPTrans.[4]"
+        },
+        {
+          "name": "Carro Médio a Gasolina (Proxy)",
+          "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na",
+          "unit_type": "Distance",
+          "unit": "km",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator de base para carros a gasolina. Usar na modelagem da frota de SP.[5]"
+        },
+        {
+          "name": "Carro Médio a Diesel (Proxy)",
+          "activity_id": "passenger_vehicle-vehicle_type_medium_car-fuel_source_diesel-engine_size_na-vehicle_age_na-vehicle_weight_na",
+          "unit_type": "Distance",
+          "unit": "km",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator de base para carros a diesel. Usar na modelagem da frota de SP.[6]"
+        }
+      ]
+    },
+    {
+      "category": "Consumo e Resíduos",
+      "activities":"
+        },
+        {
+          "name": "Tratamento de Água (Esgoto)",
+          "activity_id": "waste_water_and_sewage_sludge_treatment-type_water_treatment",
+          "unit_type": "Volume",
+          "unit": "m3",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS (Reino Unido) como um proxy robusto."
+        },
+        {
+          "name": "Resíduos - Plástico (Aterro)",
+          "activity_id": "waste-type_plastics-disposal_method_landfill",
+          "unit_type": "Weight",
+          "unit": "tonne",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Proxy para descarte de plástico em aterro. A modelagem com dados da CETESB seria mais precisa.[7]"
+        },
+        {
+          "name": "Resíduos - Papel e Papelão (Aterro)",
+          "activity_id": "waste-type_paper_and_cardboard-disposal_method_landfill",
+          "unit_type": "Weight",
+          "unit": "tonne",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Proxy para descarte de papel em aterro. A modelagem com dados da CETESB seria mais precisa."
+        }
+      ]
+    }
+  ]
+}
