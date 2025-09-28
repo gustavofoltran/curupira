@@ -1,7 +1,17 @@
 {
-  "activitiesName":,
-  "activity_catalog":"
-        },
+  "activitiesName": [
+    "Gás de Cozinha (GLP) Residencial",
+    "Ônibus Urbano (Proxy)",
+    "Carro Médio a Gasolina (Proxy)",
+    "Carro Médio a Diesel (Proxy)",
+    "Tratamento de Água (Esgoto)",
+    "Resíduos - Plástico (Aterro)",
+    "Resíduos - Papel e Papelão (Aterro)"
+  ],
+  "activitiesCatalog": [
+    {
+      "category": "Energia",
+      "activities": [
         {
           "name": "Gás de Cozinha (GLP) Residencial",
           "activity_id": "fuel-type_liquefied_petroleum_gases_lpg-fuel_use_stationary_combustion",
@@ -15,8 +25,7 @@
     },
     {
       "category": "Transporte",
-      "activities":"
-        },
+      "activities": [
         {
           "name": "Ônibus Urbano (Proxy)",
           "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
@@ -48,8 +57,7 @@
     },
     {
       "category": "Consumo e Resíduos",
-      "activities":"
-        },
+      "activities": [
         {
           "name": "Tratamento de Água (Esgoto)",
           "activity_id": "waste_water_and_sewage_sludge_treatment-type_water_treatment",
