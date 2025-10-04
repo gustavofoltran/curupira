@@ -3,12 +3,15 @@
     "Gás de Cozinha (GLP) Residencial",
     "Gás Natural (Uso Industrial)",
     "Diesel (Maquinário Agrícola/Industrial)",
-    "Ônibus Urbano (Proxy)",
-    "Carro Médio a Gasolina (Proxy)",
-    "Carro Médio a Diesel (Proxy)",
+    "Eletricidade (Rede Elétrica - Proxy Nacional)",
+    "Ônibus Urbano ",
+    "Carro Médio a Gasolina ",
+    "Carro Médio a Diesel ",
     "Voo Doméstico (Classe Econômica)",
+    "Metrô de São Paulo",
     "Frete Marítimo (Navio de Contêiner)",
     "Frete Aéreo (Longo Curso)",
+    "Frete Rodoviário (Caminhão Pesado)",
     "Pecuária - Fermentação Entérica (Gado)",
     "Consumo de Leite",
     "Produção de Fertilizantes (NPK)",
@@ -28,7 +31,7 @@
           "unit": "MMBTU",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator de base para queima de GLP em residências (Escopo 1). Fonte confiável para uso como proxy.[1]"
+          "notes": "Fator de base para queima de GLP em residências"
         },
         {
           "name": "Gás Natural (Uso Industrial)",
@@ -37,7 +40,7 @@
           "unit": "MMBTU",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais (Escopo 1).[2]"
+          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais "
         },
         {
           "name": "Diesel (Maquinário Agrícola/Industrial)",
@@ -46,7 +49,17 @@
           "unit": "gal (US)",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção (Escopo 1)."
+          "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção"
+        },
+        {
+          {
+          "name": "Eletricidade (Rede Elétrica)",
+          "activity_id": "electricity",
+          "unit_type": "Energy",
+          "unit": "kWh",
+          "source": "MCTI (Ministério da Ciência, Tecnologia e Inovação)",
+          "region": "BR",
+          "notes": "Dado oficial do governo brasileiro (0,0385 kgCO2e/kWh em 2023), atividade não é da climatiq"
         }
       ]
     },
@@ -54,31 +67,31 @@
       "category": "Transporte",
       "activities": [
         {
-          "name": "Ônibus Urbano (Proxy)",
+          "name": "Ônibus Urbano ",
           "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
           "unit_type": "Passenger Over Distance",
           "unit": "passenger-mile",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator de base para ônibus. Usar como ponto de partida para a modelagem da frota da SPTrans."
+          "notes": "Fator de base para ônibus"
         },
         {
-          "name": "Carro Médio a Gasolina (Proxy)",
+          "name": "Carro Médio a Gasolina ",
           "activity_id": "passenger_vehicle-vehicle_type_car-fuel_source_petrol-engine_size_na-vehicle_age_na-vehicle_weight_na",
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator de base para carros a gasolina. Usar na modelagem da frota de SP com dados da SENATRAN."
+          "notes": "Fator de base para carros a gasolina"
         },
         {
-          "name": "Carro Médio a Diesel (Proxy)",
+          "name": "Carro Médio a Diesel ",
           "activity_id": "passenger_vehicle-vehicle_type_medium_car-fuel_source_diesel-engine_size_na-vehicle_age_na-vehicle_weight_na",
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator de base para carros a diesel. Usar na modelagem da frota de SP com dados da SENATRAN."
+          "notes": "Fator de base para carros a diesel"
         },
         {
           "name": "Voo Doméstico (Classe Econômica)",
@@ -87,12 +100,20 @@
           "unit": "passenger-km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator para voos domésticos. Relevante para viagens pessoais e de negócios (Escopo 3).[3]"
+          "notes": "Fator para voos domésticos"
+        },
+        {"name": "Metrô de São Paulo",
+          "activity_id": "metro_sao_paulo_",
+          "unit_type": "Passenger Over Distance",
+          "unit": "pkm",
+          "source": "Metrô de São Paulo (Relatório de Sustentabilidade 2023)",
+          "region": "BR-SP",
+          "notes": " (3 gCO2e/pkm), dado não é da climatiq"
         }
       ]
     },
     {
-      "category": "Logística e Frete (Escopo 3)",
+      "category": "Logística e Frete ",
       "activities": [
         {
           "name": "Frete Marítimo (Navio de Contêiner)",
@@ -101,7 +122,7 @@
           "unit": "tonne-km",
           "source": "ADEME",
           "region": "FR",
-          "notes": "Fator de base para transporte de carga em navios de contêiner.[4]"
+          "notes": "Fator de base para transporte de carga em navios de contêiner"
         },
         {
           "name": "Frete Aéreo (Longo Curso)",
@@ -110,7 +131,16 @@
           "unit": "tonne-km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator para frete aéreo internacional de longa distância, incluindo o efeito de forçante radiativa (RF)."
+          "notes": "Fator para frete aéreo internacional de longa distância"
+        },
+        {
+          "name": "Frete Rodoviário (Caminhão Pesado)",
+          "activity_id": "road_freight-vehicle_type_hgv-fuel_source_na",
+          "unit_type": "Weight Over Distance",
+          "unit": "tonne-km",
+          "source": "GLEC",
+          "region": "N_AMERICA",
+          "notes": "Fator de base para frete com veículos pesados (Heavy Goods Vehicle)"
         }
       ]
     },
@@ -124,7 +154,7 @@
           "unit": "kg",
           "source": "WRAP",
           "region": "GLOBAL",
-          "notes": "Fator global para carne bovina. Para maior precisão no Brasil, o ideal é usar fatores locais da Embrapa e implementá-los como fator privado.[5, 6, 7]"
+          "notes": "Fator global para carne bovina, talvez seja melhor utilizar dados da Embrapa!!!!!"
         },
         {
           "name": "Consumo de Leite",
@@ -133,7 +163,7 @@
           "unit": "kg",
           "source": "GEMIS",
           "region": "DE",
-          "notes": "Fator de base para o consumo de leite, considerando o ciclo de vida até a prateleira."
+          "notes": "Fator de base para o consumo de leite"
         },
         {
           "name": "Produção de Fertilizantes (NPK)",
@@ -142,7 +172,7 @@
           "unit": "kg",
           "source": "CBAM",
           "region": "EG",
-          "notes": "Fator para produção de fertilizantes NPK. Fatores mais detalhados por processo geralmente exigem licença paga."
+          "notes": "Fator para produção de fertilizantes NPK"
         }
       ]
     },
@@ -156,7 +186,7 @@
           "unit": "m3",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS (Reino Unido) como um proxy robusto."
+          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS "
         },
         {
           "name": "Resíduos - Plástico (Aterro)",
@@ -165,7 +195,7 @@
           "unit": "tonne",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Proxy para descarte de plástico em aterro. A modelagem com dados da CETESB seria mais precisa."
+          "notes": "Proxy para descarte de plástico em aterro"
         },
         {
           "name": "Resíduos - Papel e Papelão (Aterro)",
@@ -174,7 +204,7 @@
           "unit": "tonne",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Proxy para descarte de papel em aterro. A modelagem com dados da CETESB seria mais precisa."
+          "notes": "Proxy para descarte de papel em aterro"
         },
         {
           "name": "Resíduos Industriais (Aterro)",
