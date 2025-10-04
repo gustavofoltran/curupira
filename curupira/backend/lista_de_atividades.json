@@ -1,12 +1,21 @@
 {
   "activitiesName": [
     "Gás de Cozinha (GLP) Residencial",
+    "Gás Natural (Uso Industrial)",
+    "Diesel (Maquinário Agrícola/Industrial)",
     "Ônibus Urbano (Proxy)",
     "Carro Médio a Gasolina (Proxy)",
     "Carro Médio a Diesel (Proxy)",
+    "Voo Doméstico (Classe Econômica)",
+    "Frete Marítimo (Navio de Contêiner)",
+    "Frete Aéreo (Longo Curso)",
+    "Pecuária - Fermentação Entérica (Gado)",
+    "Consumo de Leite",
+    "Produção de Fertilizantes (NPK)",
     "Tratamento de Água (Esgoto)",
     "Resíduos - Plástico (Aterro)",
-    "Resíduos - Papel e Papelão (Aterro)"
+    "Resíduos - Papel e Papelão (Aterro)",
+    "Resíduos Industriais (Aterro)"
   ],
   "activitiesCatalog": [
     {
@@ -19,7 +28,25 @@
           "unit": "MMBTU",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator de base para queima de GLP. Fonte confiável para uso como proxy.[1]"
+          "notes": "Fator de base para queima de GLP em residências (Escopo 1). Fonte confiável para uso como proxy.[1]"
+        },
+        {
+          "name": "Gás Natural (Uso Industrial)",
+          "activity_id": "fuel-type_natural_gas-fuel_use_stationary_combustion",
+          "unit_type": "Energy",
+          "unit": "MMBTU",
+          "source": "EPA",
+          "region": "US",
+          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais (Escopo 1).[2]"
+        },
+        {
+          "name": "Diesel (Maquinário Agrícola/Industrial)",
+          "activity_id": "fuel-type_diesel-fuel_use_mobile_locomotives",
+          "unit_type": "Volume",
+          "unit": "gal (US)",
+          "source": "EPA",
+          "region": "US",
+          "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção (Escopo 1)."
         }
       ]
     },
@@ -33,7 +60,7 @@
           "unit": "passenger-mile",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator de base para ônibus. Usar como ponto de partida para a modelagem da frota da SPTrans.[4]"
+          "notes": "Fator de base para ônibus. Usar como ponto de partida para a modelagem da frota da SPTrans."
         },
         {
           "name": "Carro Médio a Gasolina (Proxy)",
@@ -42,7 +69,7 @@
           "unit": "km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator de base para carros a gasolina. Usar na modelagem da frota de SP.[5]"
+          "notes": "Fator de base para carros a gasolina. Usar na modelagem da frota de SP com dados da SENATRAN."
         },
         {
           "name": "Carro Médio a Diesel (Proxy)",
@@ -51,7 +78,71 @@
           "unit": "km",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator de base para carros a diesel. Usar na modelagem da frota de SP.[6]"
+          "notes": "Fator de base para carros a diesel. Usar na modelagem da frota de SP com dados da SENATRAN."
+        },
+        {
+          "name": "Voo Doméstico (Classe Econômica)",
+          "activity_id": "passenger_flight-route_type_domestic-class_economy-distance_na",
+          "unit_type": "Passenger Over Distance",
+          "unit": "passenger-km",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator para voos domésticos. Relevante para viagens pessoais e de negócios (Escopo 3).[3]"
+        }
+      ]
+    },
+    {
+      "category": "Logística e Frete (Escopo 3)",
+      "activities": [
+        {
+          "name": "Frete Marítimo (Navio de Contêiner)",
+          "activity_id": "freight_ship-vessel_type_container_ship-route_type_na-tonnage_na",
+          "unit_type": "Weight Over Distance",
+          "unit": "tonne-km",
+          "source": "ADEME",
+          "region": "FR",
+          "notes": "Fator de base para transporte de carga em navios de contêiner.[4]"
+        },
+        {
+          "name": "Frete Aéreo (Longo Curso)",
+          "activity_id": "freight_flight-route_type_international-distance_long_haul_gt_3700km-weight_na-rf_included-distance_uplift_included",
+          "unit_type": "Weight Over Distance",
+          "unit": "tonne-km",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator para frete aéreo internacional de longa distância, incluindo o efeito de forçante radiativa (RF)."
+        }
+      ]
+    },
+    {
+      "category": "Alimentação e Agropecuária",
+      "activities": [
+        {
+          "name": "Pecuária - Fermentação Entérica (Gado)",
+          "activity_id": "livestock_farming-type_beef",
+          "unit_type": "Weight",
+          "unit": "kg",
+          "source": "WRAP",
+          "region": "GLOBAL",
+          "notes": "Fator global para carne bovina. Para maior precisão no Brasil, o ideal é usar fatores locais da Embrapa e implementá-los como fator privado.[5, 6, 7]"
+        },
+        {
+          "name": "Consumo de Leite",
+          "activity_id": "food_beverages_tobacco-type_milk",
+          "unit_type": "Weight",
+          "unit": "kg",
+          "source": "GEMIS",
+          "region": "DE",
+          "notes": "Fator de base para o consumo de leite, considerando o ciclo de vida até a prateleira."
+        },
+        {
+          "name": "Produção de Fertilizantes (NPK)",
+          "activity_id": "chemicals-type_fertilisers_containing_npk",
+          "unit_type": "Weight",
+          "unit": "kg",
+          "source": "CBAM",
+          "region": "EG",
+          "notes": "Fator para produção de fertilizantes NPK. Fatores mais detalhados por processo geralmente exigem licença paga."
         }
       ]
     },
@@ -74,7 +165,7 @@
           "unit": "tonne",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Proxy para descarte de plástico em aterro. A modelagem com dados da CETESB seria mais precisa.[7]"
+          "notes": "Proxy para descarte de plástico em aterro. A modelagem com dados da CETESB seria mais precisa."
         },
         {
           "name": "Resíduos - Papel e Papelão (Aterro)",
@@ -84,6 +175,15 @@
           "source": "BEIS",
           "region": "GB",
           "notes": "Proxy para descarte de papel em aterro. A modelagem com dados da CETESB seria mais precisa."
+        },
+        {
+          "name": "Resíduos Industriais (Aterro)",
+          "activity_id": "waste-type_commercial_and_industrial-disposal_method_landfill",
+          "unit_type": "Weight",
+          "unit": "tonne",
+          "source": "BEIS",
+          "region": "GB",
+          "notes": "Fator de base para descarte de resíduos comerciais e industriais em aterro."
         }
       ]
     }
