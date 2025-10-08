@@ -26,7 +26,7 @@
       "activities": [
         {
           "name": "Gás de Cozinha (GLP) Residencial",
-          "activity_id": "fuel-type_liquefied_petroleum_gases_lpg-fuel_use_stationary_combustion",
+          "activity_id": " fuel-type_lpg-fuel_use_stationary",
           "unit_type": "Energy",
           "unit": "MMBTU",
           "source": "EPA",
@@ -35,7 +35,7 @@
         },
         {
           "name": "Gás Natural (Uso Industrial)",
-          "activity_id": "fuel-type_natural_gas-fuel_use_stationary_combustion",
+          "activity_id": "fuel-type_natural_gas-fuel_use_stationary",
           "unit_type": "Energy",
           "unit": "MMBTU",
           "source": "EPA",
@@ -94,8 +94,8 @@
           "notes": "Fator de base para carros a diesel"
         },
         {
-          "name": "Voo Doméstico (Classe Econômica)",
-          "activity_id": "passenger_flight-route_type_domestic-class_economy-distance_na",
+          "name": "Voo Doméstico",
+          "activity_id": "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-rf_included-distance_uplift_included",
           "unit_type": "Passenger Over Distance",
           "unit": "passenger-km",
           "source": "BEIS",
