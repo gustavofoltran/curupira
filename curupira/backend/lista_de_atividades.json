@@ -81,7 +81,7 @@
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator de base para carros a gasolina"
         },
         {
@@ -90,7 +90,7 @@
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator de base para carros a diesel"
         },
         {
@@ -99,7 +99,7 @@
           "unit_type": "Passenger Over Distance",
           "unit": "passenger-km",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator para voos domésticos"
         },
         {"name": "Metrô de São Paulo",
@@ -117,11 +117,11 @@
       "activities": [
         {
           "name": "Frete Marítimo (Navio de Contêiner)",
-          "activity_id": "freight_ship-vessel_type_container_ship-route_type_na-tonnage_na",
+          "activity_id": "sea_freight-vessel_type_container-route_type_na-vessel_length_na-tonnage_na-fuel_source_na",
           "unit_type": "Weight Over Distance",
           "unit": "tonne-km",
-          "source": "ADEME",
-          "region": "FR",
+          "source": "BEIS",
+          "region": "United Kingdom",
           "notes": "Fator de base para transporte de carga em navios de contêiner"
         },
         {
@@ -130,12 +130,12 @@
           "unit_type": "Weight Over Distance",
           "unit": "tonne-km",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator para frete aéreo internacional de longa distância"
         },
         {
           "name": "Frete Rodoviário (Caminhão Pesado)",
-          "activity_id": "road_freight-vehicle_type_hgv-fuel_source_na",
+          "activity_id": "freight_vehicle-vehicle_type_hgv_rigid-fuel_source_diesel-vehicle_weight_na-percentage_load_avg",
           "unit_type": "Weight Over Distance",
           "unit": "tonne-km",
           "source": "GLEC",
@@ -148,17 +148,17 @@
       "category": "Alimentação e Agropecuária",
       "activities": [
         {
-          "name": "Pecuária - Fermentação Entérica (Gado)",
+          "name": "Pecuária - Gado"
           "activity_id": "livestock_farming-type_beef",
           "unit_type": "Weight",
           "unit": "kg",
           "source": "WRAP",
-          "region": "GLOBAL",
-          "notes": "Fator global para carne bovina, talvez seja melhor utilizar dados da Embrapa!!!!!"
+          "region": "france",
+          "notes": "Fator frances para carne bovina, talvez seja melhor utilizar dados da Embrapa!!!!!"
         },
         {
           "name": "Consumo de Leite",
-          "activity_id": "food_beverages_tobacco-type_milk",
+          "activity_id": "consumer_goods-type_milk",
           "unit_type": "Weight",
           "unit": "kg",
           "source": "GEMIS",
@@ -181,11 +181,11 @@
       "activities": [
         {
           "name": "Tratamento de Água (Esgoto)",
-          "activity_id": "waste_water_and_sewage_sludge_treatment-type_water_treatment",
+          "activity_id": "water_treatment-type_na",
           "unit_type": "Volume",
           "unit": "m3",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator para o tratamento de esgoto. Fonte: BEIS "
         },
         {
@@ -194,7 +194,7 @@
           "unit_type": "Weight",
           "unit": "tonne",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Proxy para descarte de plástico em aterro"
         },
         {
@@ -203,7 +203,7 @@
           "unit_type": "Weight",
           "unit": "tonne",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Proxy para descarte de papel em aterro"
         },
         {
@@ -212,7 +212,7 @@
           "unit_type": "Weight",
           "unit": "tonne",
           "source": "BEIS",
-          "region": "GB",
+          "region": "United Kingdom",
           "notes": "Fator de base para descarte de resíduos comerciais e industriais em aterro."
         }
       ]
