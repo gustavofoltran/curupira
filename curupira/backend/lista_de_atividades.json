@@ -67,7 +67,7 @@
       "category": "Transporte",
       "activities": [
         {
-          "name": "Ônibus Urbano ",
+          "name": "Ônibus Urbano",
           "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
           "unit_type": "Passenger Over Distance",
           "unit": "passenger-mile",
