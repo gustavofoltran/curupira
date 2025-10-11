@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: django_backend
     command: python manage.py runserver 0.0.0.0:8000
+    user: root
     volumes:
       - ./backend:/app
     ports:
@@ -21,26 +22,11 @@ services:
     env_file:
       - ./backend/.env
     environment:
-      # override or ensure host variable (used internally by PostgreSQL)
       POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
-  test:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: django_test
-    command: >
-      sh -c "python manage.py test"
-    volumes:
-      - ./backend:/app
-    env_file:
-      - ./backend/.env
-    depends_on:
-      - db
 
 volumes:
   postgres_data:

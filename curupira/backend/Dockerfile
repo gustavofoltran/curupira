@@ -2,7 +2,7 @@
 FROM python:3.13-slim AS base
 # Seta variáveis env para o Python
 ENV PYTHONUNBUFFERED=1
-ENV DJANGO_SETTINGS_MODULE=backend.settings
+ENV DJANGO_SETTINGS_MODULE=core.settings
 WORKDIR /app
 
 # --- Builder Stage ---
