@@ -40,7 +40,7 @@
           "unit": "MMBTU",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais "
+          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais"
         },
         {
           "name": "Diesel (Maquinário Agrícola/Industrial)",
@@ -52,7 +52,6 @@
           "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção"
         },
         {
-          {
           "name": "Eletricidade (Rede Elétrica)",
           "activity_id": "electricity",
           "unit_type": "Energy",
@@ -62,7 +61,7 @@
           "notes": "Dado oficial do governo brasileiro (0,0385 kgCO2e/kWh em 2023), atividade não é da climatiq"
         }
       ]
-    
+    },
     {
       "category": "Transporte",
       "activities": [
@@ -102,13 +101,14 @@
           "region": "GB",
           "notes": "Fator para voos domésticos"
         },
-        {"name": "Metrô de São Paulo",
+        {
+          "name": "Metrô de São Paulo",
           "activity_id": "metro_sao_paulo_",
           "unit_type": "Passenger Over Distance",
           "unit": "pkm",
           "source": "Metrô de São Paulo (Relatório de Sustentabilidade 2023)",
           "region": "BR-SP",
-          "notes": " (3 gCO2e/pkm), dado não é da climatiq"
+          "notes": "(3 gCO2e/pkm), dado não é da climatiq"
         }
       ]
     },
@@ -186,7 +186,7 @@
           "unit": "m3",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS "
+          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS"
         },
         {
           "name": "Resíduos - Plástico (Aterro)",
