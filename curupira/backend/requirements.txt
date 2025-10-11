@@ -9,3 +9,5 @@ pytest>=8.3.3
 pytest-django>=4.9.0
 coverage>=7.6.0
 django-cors-headers>=4.3.1
+djangorestframework
+drf-spectacular

@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
+    "rest_framework",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -104,7 +106,23 @@ MEDIA_ROOT = os.getenv("MEDIA_ROOT", BASE_DIR / "media")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # -----------------------------------------
-# CORS (optional, useful for APIs)
+# Django REST Framework & drf-spectacular
+# -----------------------------------------
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Curupira API",
+    "DESCRIPTION": "Documentação da API do projeto Curupira.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "CONTACT": {"name": "Equipe Curupira", "email": "admin@example.com"},
+    "LICENSE": {"name": "MIT License"},
+}
+
+# -----------------------------------------
+# CORS
 # -----------------------------------------
 CORS_ALLOW_ALL_ORIGINS = True
 
