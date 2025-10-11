@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from myproject.API.test_organizer import ExampleDataOrganizer
+from core.API.test_organizer import ExampleDataOrganizer
 
 def test_api_view(request):
     organizer = ExampleDataOrganizer()

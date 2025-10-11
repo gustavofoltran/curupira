@@ -1,0 +1,10 @@
+set -e
+
+echo "Waiting for database to be ready..."
+python wait-for-db.py
+
+echo "Creating and applying database migrations..."
+python manage.py makemigrations
+python manage.py migrate
+
+exec "$@"
