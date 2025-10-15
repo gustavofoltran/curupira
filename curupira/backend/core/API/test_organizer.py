@@ -4,14 +4,14 @@ class ExampleDataOrganizer(DataOrganizer):
     def __init__(self):
         payload = {
             "emission_factor": {
-                "activity_id": "fuel-type_natural_gas-fuel_use_stationary",
-                "source": "EPA",
-                "region": "US",
+                "activity_id": "chemicals-type_fertilisers_containing_npk",
+                "source": "CBAM",
+                "region": "EG",
                 "data_version": "26"
             },
             "parameters": {
-                "energy": 56,
-                "energy_unit": "MMBTU"
+                "weight": 698.0,
+                "weight_unit": "kg"
             }
         }
         super().__init__(payload)

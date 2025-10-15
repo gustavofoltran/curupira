@@ -26,7 +26,7 @@
       "activities": [
         {
           "name": "Gás de Cozinha (GLP) Residencial",
-          "activity_id": " fuel-type_lpg-fuel_use_stationary",
+          "activity_id": "fuel-type_lpg-fuel_use_stationary",
           "unit_type": "Energy",
           "unit": "MMBTU",
           "source": "EPA",
@@ -46,7 +46,7 @@
           "name": "Diesel (Maquinário Agrícola/Industrial)",
           "activity_id": "fuel-type_diesel-fuel_use_mobile_locomotives",
           "unit_type": "Volume",
-          "unit": "gal (US)",
+          "unit": "gallon_us",
           "source": "EPA",
           "region": "US",
           "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção"
@@ -69,7 +69,7 @@
           "name": "Ônibus Urbano",
           "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
           "unit_type": "Passenger Over Distance",
-          "unit": "passenger-mile",
+          "unit": "passenger/mi",
           "source": "EPA",
           "region": "US",
           "notes": "Fator de base para ônibus"
@@ -80,7 +80,7 @@
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator de base para carros a gasolina"
         },
         {
@@ -89,16 +89,16 @@
           "unit_type": "Distance",
           "unit": "km",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator de base para carros a diesel"
         },
         {
           "name": "Voo Doméstico",
           "activity_id": "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-rf_included-distance_uplift_included",
           "unit_type": "Passenger Over Distance",
-          "unit": "passenger-km",
+          "unit": "passenger/km",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator para voos domésticos"
         },
         {"name": "Metrô de São Paulo",
@@ -118,25 +118,25 @@
           "name": "Frete Marítimo (Navio de Contêiner)",
           "activity_id": "sea_freight-vessel_type_container-route_type_na-vessel_length_na-tonnage_na-fuel_source_na",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
+          "unit": "t/km",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator de base para transporte de carga em navios de contêiner"
         },
         {
           "name": "Frete Aéreo (Longo Curso)",
           "activity_id": "freight_flight-route_type_international-distance_long_haul_gt_3700km-weight_na-rf_included-distance_uplift_included",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
+          "unit": "t/km",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator para frete aéreo internacional de longa distância"
         },
         {
           "name": "Frete Rodoviário (Caminhão Pesado)",
           "activity_id": "freight_vehicle-vehicle_type_hgv_rigid-fuel_source_diesel-vehicle_weight_na-percentage_load_avg",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
+          "unit": "t/km",
           "source": "GLEC",
           "region": "N_AMERICA",
           "notes": "Fator de base para frete com veículos pesados (Heavy Goods Vehicle)"
@@ -184,34 +184,34 @@
           "unit_type": "Volume",
           "unit": "m3",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator para o tratamento de esgoto. Fonte: BEIS "
         },
         {
           "name": "Resíduos - Plástico (Aterro)",
           "activity_id": "waste-type_plastics-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Proxy para descarte de plástico em aterro"
         },
         {
           "name": "Resíduos - Papel e Papelão (Aterro)",
           "activity_id": "waste-type_paper_and_cardboard-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Proxy para descarte de papel em aterro"
         },
         {
           "name": "Resíduos Industriais (Aterro)",
           "activity_id": "waste-type_commercial_and_industrial-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
-          "region": "United Kingdom",
+          "region": "GB",
           "notes": "Fator de base para descarte de resíduos comerciais e industriais em aterro."
         }
       ]
