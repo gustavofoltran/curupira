@@ -1,0 +1,46 @@
+Entrega 2: Projeto Curupira
+
+Este documento detalha a especificação de requisitos, as tecnologias selecionadas, a arquitetura inicial e a organização do repositório para o Projeto Curupira, em conformidade com os critérios da Entrega 2.
+
+
+1.Backlog de funcionalidades
+
+
+2. Protótipo da Interface da Solução
+
+link para o figma*
+
+
+3.Definição de tecnologias
+
+Backend:
+
+Linguagens de programação:Python
+Frameworks: Django
+
+Frontend:
+
+Linguagens de programação:Typescript
+Frameworks: React.js
+
+
+API utilizada e banco de dados
+Climatiq - 
+
+Comunicação HTTP por API
+JSON
+
+
+
+3. Link do repositório 
+O repositório utilizado está no github e contém as seguintes partições:
+main: onde se encontram os arquivos úteis para o funcionamento do projeto, bem como um readme de boas práticas e autorias do projeto
+dev: onde estão localizados os projetos de backend e frontend 
+
+Além disso, na aba de issues estão as atividades realizadas e a serem realizadas
+E na aba projetos, essas issues estão organizadas no formato scrum, com uma parte para melhor visualização geral do andamento da sprint e outra para visualizar todas as issues, divididas em sprint, status, labels, assignees e story points. 
+ 
+https://github.com/gustavofoltran/curupira
+
+
+
