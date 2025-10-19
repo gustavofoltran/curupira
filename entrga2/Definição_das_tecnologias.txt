@@ -30,6 +30,9 @@ Climatiq -
 Comunicação HTTP por API
 JSON
 
+Banco de dados:
+postgreSQL
+
 
 
 3. Link do repositório 
