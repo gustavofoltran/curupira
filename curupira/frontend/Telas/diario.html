@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    as="style"
+    onload="this.rel='stylesheet'"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  />
+  <title>Stitch Design - Diário</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style type="text/tailwindcss">
+    :root {
+      --primary-green: #20df6c;
+      --dark-green: #29382f;
+      --background-dark: #111714;
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="relative flex h-screen w-full flex-col bg-[var(--background-dark)] dark group/design-root overflow-x-hidden"
+    style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'
+  >
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-3">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CURUPIRA</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
+            <a class="text-white text-sm font-medium leading-normal" href="#">About</a>
+            <a class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
+          </div>
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#29382f] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+          >
+            <div class="text-white" data-icon="Globe" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"
+                ></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjYSvkHLGzWJ-wh3WMSknBQjX5zWK8QeMUfADrqZZ44YA7h1nwFDe3G7uNWzBGNFHj080_H5EjM0vlON6BAjh_UIXFyZ-Wr1afzuESgXIGrh34KAGZz99_guLiPml9rjTRF09c6kLw3ZVgZq93wuTAkLFwFN-xU1Eg3drsByHkmunNAhekgz7rnhP8XKCqVXgFuWBodyz1pXAAaVjs34642TG_6g8vEaAqyKtoDt1WO7EXsXFMH1X5XvzPyV3AXjj5_HbtcqvZiz8");'
+          ></div>
+        </div>
+      </header>
+
+      <main class="flex flex-1 flex-col items-center justify-start p-4 overflow-y-auto pb-24">
+        <h2
+          class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-6"
+        >
+          Meu Diário
+        </h2>
+        <div class="w-full max-w-2xl space-y-4">
+          <div class="bg-[var(--dark-green)] rounded-lg p-4 shadow-lg">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-white text-lg font-semibold">Dia de Baixo Carbono</h3>
+                <span class="text-gray-400 text-xs">18 de Out, 2025</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+              Hoje foquei em usar transporte público e comi apenas refeições vegetarianas. Senti uma grande diferença e a pegada do dia foi de apenas 2.1 kg CO2e.
+            </p>
+            <div class="flex items-center justify-end mt-3 text-gray-400 text-xs">
+                <span class="text-sm font-medium text-[var(--primary-green)]">Pegada do dia: 2.1 kg</span>
+            </div>
+          </div>
+          <div class="bg-[var(--dark-green)] rounded-lg p-4 shadow-lg">
+             <div class="flex justify-between items-center mb-2">
+                <h3 class="text-white text-lg font-semibold">Iniciando o Desafio Sem Carro</h3>
+                <span class="text-gray-400 text-xs">17 de Out, 2025</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+              Primeiro dia do meu desafio de uma semana sem usar o carro. Fui de bicicleta para o trabalho. Foi cansativo, mas revigorante. Economizei cerca de 3 kg de CO2!
+            </p>
+             <div class="flex items-center justify-end mt-3 text-gray-400 text-xs">
+                <span class="text-sm font-medium text-[var(--primary-green)]">Pegada do dia: 4.5 kg</span>
+            </div>
+          </div>
+           <div class="bg-[var(--dark-green)] rounded-lg p-4 shadow-lg">
+             <div class="flex justify-between items-center mb-2">
+                <h3 class="text-white text-lg font-semibold">Compras no Mercado Local</h3>
+                <span class="text-gray-400 text-xs">15 de Out, 2025</span>
+            </div>
+            <p class="text-gray-300 text-sm">
+                Fiz todas as compras da semana no mercado de produtores locais. Menos embalagens plásticas e alimentos mais frescos. A pegada de carbono dos alimentos foi bem menor.
+            </p>
+             <div class="flex items-center justify-end mt-3 text-gray-400 text-xs">
+                <span class="text-sm font-medium text-[var(--primary-green)]">Pegada do dia: 3.8 kg</span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <button class="fixed bottom-24 right-6 bg-[var(--primary-green)] text-black p-4 rounded-full shadow-lg z-10">
+        <span class="material-symbols-outlined text-3xl">add</span>
+      </button>
+
+      <div class="fixed bottom-0 left-0 right-0 flex justify-center w-full px-4 py-4 bg-[var(--background-dark)]">
+        <div
+          class="flex justify-around items-center w-full max-w-xl bg-[var(--dark-green)] rounded-full py-2 px-4 shadow-xl"
+        >
+          <button class="flex flex-col items-center justify-center p-2 rounded-full text-[var(--primary-green)] bg-[#3d4f45]">
+            <span class="material-symbols-outlined text-2xl">event_note</span>
+            <span class="text-xs font-medium">Diário</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center p-2 rounded-full text-white hover:bg-[#3d4f45] transition-colors"
+          >
+            <span class="material-symbols-outlined text-2xl">calculate</span>
+            <span class="text-xs font-medium">Cálculo</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center p-2 rounded-full text-white hover:bg-[#3d4f45] transition-colors"
+          >
+            <span class="material-symbols-outlined text-2xl"
+              >calendar_month</span
+            >
+            <span class="text-xs font-medium">Calendário</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center p-2 rounded-full text-white hover:bg-[#3d4f45] transition-colors"
+          >
+            <span class="material-symbols-outlined text-2xl">article</span>
+            <span class="text-xs font-medium">Notícias</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

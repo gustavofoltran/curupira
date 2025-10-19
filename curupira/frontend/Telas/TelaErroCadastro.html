@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curupira - Erro de Cadastro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#38e07b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#122017",
+                        "surface-dark": "#1A2E23",
+                        "error-red": "#ff5252",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div class="text-center">
+<img alt="Curupira logo, a footprint made of green leaves" class="mx-auto w-24 h-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDmDOwrziWawCRI_LkSUBNFEtGGoAgKS9ybWfegmo9QjK9rUupyOe_5Fo7JUvtLHkq2N_f0yVfTKopt09JCa9cEZ1npbspzSLXFSHEMJVxBwgt1L9PTVEnuXWLEKkumSFfvqg6GTHE_iO9yGZT2158fSRhZGIkS3GvQwpRiQ2T771b6EUE5L69pfk_7RA6H0shH8B9Y8LJOAFwiBhJkAuE4qTV8VnU7koin2NN2wtQUzkuq61-EHype89-UcjUf1Js8tc2KwwQro"/>
+<h1 class="text-5xl font-bold tracking-tight text-primary">
+                CURUPIRA
+            </h1>
+</div>
+<div class="bg-surface-dark p-8 rounded-xl shadow-lg space-y-6 text-center">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-error-red text-6xl mb-4">
+            error
+        </span>
+<h2 class="text-2xl font-bold text-white mb-2">Erro no Cadastro</h2>
+<p class="text-gray-400">
+            As senhas não coincidem. Por favor, tente novamente.
+        </p>
+</div>
+<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-black bg-primary hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-dark focus:ring-primary" type="submit">
+                Tentar Novamente
+            </button>
+</div>
+<div class="text-center text-sm">
+<p class="text-gray-400">
+                Precisa de ajuda?
+                <a class="font-medium text-primary hover:text-green-400" href="#">
+                    Fale conosco
+                </a>
+</p>
+</div>
+</div>
+</div>
+
+</body></html>
