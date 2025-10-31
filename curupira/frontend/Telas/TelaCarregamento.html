@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curupira - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#38e07b", "background-light": "#f6f8f7", "background-dark": "#122017"}, fontFamily: {display: "Space Grotesk"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .animate-spin-slow {
+            animation: spin 3s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex items-center justify-center min-h-screen">
+<div class="text-center">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-40 h-40 border-t-4 border-b-4 border-primary rounded-full animate-spin-slow"></div>
+<img alt="Curupira logo, a footprint made of green leaves" class="w-32 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDmDOwrziWawCRI_LkSUBNFEtGGoAgKS9ybWfegmo9QjK9rUupyOe_5Fo7JUvtLHkq2N_f0yVfTKopt09JCa9cEZ1npbspzSLXFSHEMJVxBwgt1L9PTVEnuXWLEKkumSFfvqg6GTHE_iO9yGZT2158fSRhZGIkS3GvQwpRiQ2T771b6EUE5L69pfk_7RA6H0shH8B9Y8LJOAFwiBhJkAuE4qTV8VnU7koin2NN2wtQUzkuq61-EHype89-UcjUf1Js8tc2KwwQro"/>
+</div>
+</div>
+</div>
+</body></html>
