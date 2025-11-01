@@ -9,8 +9,6 @@ services:
       - ./backend:/app
     ports:
       - "8000:8000"
-    env_file:
-      - ./backend/.env
     depends_on:
       - db
 
@@ -18,10 +16,6 @@ services:
     image: postgres:15
     container_name: postgres_db
     restart: always
-    environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
