@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    as="style"
+    onload="this.rel='stylesheet'"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  />
+  <title>Stitch Design - Diário</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style type="text/tailwindcss">
+    :root {
+      --primary-green: #20df6c;
+      --dark-green: #29382f;
+      --background-dark: #111714;
+      --accent-yellow: #FFD700;
+      --accent-orange: #FF8C00;
+      --gradient-start: #32CD32;
+      --gradient-end: #008000;
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="relative flex h-screen w-full flex-col bg-[var(--background-dark)] dark group/design-root overflow-x-hidden"
+    style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'
+  >
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] px-10 py-3">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CURUPIRA</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
+            <a class="text-white text-sm font-medium leading-normal" href="#">About</a>
+            <a class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
+          </div>
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#29382f] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+          >
+            <div class="text-white" data-icon="Globe" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"
+                ></path>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjYSvkHLGzWJ-wh3WMSknBQjX5zWK8QeMUfADrqZZ44YA7h1nwFDe3G7uNWzBGNFHj080_H5EjM0vlON6BAjh_UIXFyZ-Wr1afzuESgXIGrh34KAGZz99_guLiPml9rjTRF09c6kLw3ZVgZq93wuTAkLFwFN-xU1Eg3drsByHkmunNAhekgz7rnhP8XKCqVXgFuWBodyz1pXAAaVjs34642TG_6g8vEaAqyKtoDt1WO7EXsXFMH1X5XvzPyV3AXjj5_HbtcqvZiz8");'
+          ></div>
+        </div>
+      </header>
+
+      <main class="flex flex-1 flex-col items-center p-4 overflow-y-auto">
+        <div class="flex w-full max-w-2xl items-center justify-between rounded-full bg-[var(--dark-green)] p-3 shadow-lg mb-6">
+          <div class="flex items-center space-x-2">
+            <span class="material-symbols-outlined text-4xl text-[var(--primary-green)]">bolt</span>
+            <div class="flex flex-col">
+              <p class="text-white text-lg font-bold">Uso Contínuo</p>
+              <p class="text-gray-300 text-sm">Sequência de 15 dias!</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <div class="h-3 w-20 rounded-full bg-gray-600">
+              <div class="h-full rounded-full bg-[var(--primary-green)]" style="width: 75%;"></div>
+            </div>
+            <span class="text-white text-lg font-bold">75%</span>
+          </div>
+        </div>
+        <div class="w-full max-w-2xl space-y-6">
+          <div class="rounded-lg bg-[var(--dark-green)] p-4 shadow-lg">
+            <div class="mb-2 flex items-center justify-between">
+              <h3 class="text-white text-lg font-semibold">Nível 5: Guardião da Floresta!</h3>
+              <span class="material-symbols-outlined text-3xl text-[var(--accent-yellow)]">military_tech</span>
+            </div>
+            <div class="h-3 w-full rounded-full bg-gray-600">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)]" style="width: 75%;"></div>
+            </div>
+            <p class="mt-2 text-sm text-gray-300">
+              Próximo nível em 25% (200 XP para Nível 6)
+            </p>
+          </div>
+          <div class="rounded-lg bg-[var(--dark-green)] p-4 shadow-lg">
+            <h3 class="mb-3 text-white text-xl font-bold">Dados de Emissão</h3>
+            <div class="grid grid-cols-7 gap-2 text-center text-gray-400 text-xs font-semibold uppercase mb-2">
+              <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-white">
+              <div class="h-8 w-8 rounded-md bg-gray-700 opacity-50 flex items-center justify-center text-sm">29</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 opacity-50 flex items-center justify-center text-sm">30</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 opacity-50 flex items-center justify-center text-sm">31</div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">1</span><div class="absolute inset-0 bg-red-800 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 1: Alta Emissão</p><p>Pegada: 15 kg CO2e</p><p>Transporte: 8 kg (carro)</p><p>Energia: 5 kg (casa)</p><p>Alimentos: 2 kg (carne)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">2</span><div class="absolute inset-0 bg-yellow-700 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 2: Média Emissão</p><p>Pegada: 8 kg CO2e</p><p>Transporte: 3 kg (ônibus)</p><p>Energia: 3 kg (casa)</p><p>Alimentos: 2 kg (vegetariano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">3</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 3: Baixa Emissão</p><p>Pegada: 2 kg CO2e</p><p>Transporte: 0 kg (bike)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">4</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 4: Baixa Emissão</p><p>Pegada: 3 kg CO2e</p><p>Transporte: 1 kg (caminhada)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">5</span><div class="absolute inset-0 bg-red-800 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 5: Alta Emissão</p><p>Pegada: 12 kg CO2e</p><p>Transporte: 7 kg (carro)</p><p>Energia: 4 kg (casa)</p><p>Alimentos: 1 kg (carne)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">6</span><div class="absolute inset-0 bg-yellow-700 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 6: Média Emissão</p><p>Pegada: 9 kg CO2e</p><p>Transporte: 4 kg (ônibus)</p><p>Energia: 3 kg (casa)</p><p>Alimentos: 2 kg (vegetariano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">7</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 7: Baixa Emissão</p><p>Pegada: 2.5 kg CO2e</p><p>Transporte: 0.5 kg (bike)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">8</span><div class="absolute inset-0 bg-red-800 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 8: Alta Emissão</p><p>Pegada: 14 kg CO2e</p><p>Transporte: 9 kg (carro)</p><p>Energia: 3 kg (casa)</p><p>Alimentos: 2 kg (carne)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">9</span><div class="absolute inset-0 bg-yellow-700 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 9: Média Emissão</p><p>Pegada: 7 kg CO2e</p><p>Transporte: 3 kg (ônibus)</p><p>Energia: 2 kg (casa)</p><p>Alimentos: 2 kg (vegetariano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">10</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 10: Baixa Emissão</p><p>Pegada: 2 kg CO2e</p><p>Transporte: 0 kg (bike)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">11</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 11: Baixa Emissão</p><p>Pegada: 3 kg CO2e</p><p>Transporte: 1 kg (caminhada)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">12</span><div class="absolute inset-0 bg-red-800 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 12: Alta Emissão</p><p>Pegada: 13 kg CO2e</p><p>Transporte: 8 kg (carro)</p><p>Energia: 4 kg (casa)</p><p>Alimentos: 1 kg (carne)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">13</span><div class="absolute inset-0 bg-yellow-700 opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 13: Média Emissão</p><p>Pegada: 10 kg CO2e</p><p>Transporte: 5 kg (ônibus)</p><p>Energia: 3 kg (casa)</p><p>Alimentos: 2 kg (vegetariano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">14</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 14: Baixa Emissão</p><p>Pegada: 2.5 kg CO2e</p><p>Transporte: 0.5 kg (bike)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="relative h-8 w-8 rounded-md bg-gray-600 flex items-center justify-center text-sm group">
+                <span class="relative z-10">15</span><div class="absolute inset-0 bg-[var(--primary-green)] opacity-40 rounded-md"></div>
+                <div class="hidden group-hover:block absolute bg-[var(--background-dark)] text-white text-xs p-2 rounded-md shadow-lg z-20 w-48 -mt-24 left-1/2 -translate-x-1/2">
+                  <p class="font-bold mb-1">Dia 15: Baixa Emissão</p><p>Pegada: 2 kg CO2e</p><p>Transporte: 0 kg (bike)</p><p>Energia: 1 kg (casa)</p><p>Alimentos: 1 kg (vegano)</p>
+                </div>
+              </div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">16</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">17</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">18</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">19</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">20</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">21</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">22</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">23</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">24</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">25</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">26</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">27</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">28</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">29</div>
+              <div class="h-8 w-8 rounded-md bg-gray-700 flex items-center justify-center text-sm">30</div>
+            </div>
+            <p class="mt-4 text-sm text-gray-300">
+              Cor: <span class="text-[var(--primary-green)]">Baixa Emissão</span>, <span class="text-yellow-500">Média Emissão</span>, <span class="text-red-600">Alta Emissão</span>
+            </p>
+          </div>
+          <div class="rounded-lg bg-[var(--dark-green)] p-4 shadow-lg">
+            <h3 class="mb-3 text-white text-xl font-bold">Desafios Diários</h3>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col">
+                  <p class="text-white text-base">Desafio: Dia Sem Carro</p>
+                  <div class="h-2 w-40 rounded-full bg-gray-600">
+                    <div class="h-full rounded-full bg-[var(--primary-green)]" style="width: 100%;"></div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-3xl text-[var(--primary-green)]">check_circle</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col">
+                  <p class="text-white text-base">Desafio: Refeição Vegana</p>
+                  <div class="h-2 w-40 rounded-full bg-gray-600">
+                    <div class="h-full rounded-full bg-[var(--accent-orange)]" style="width: 50%;"></div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-3xl text-gray-400">radio_button_unchecked</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex flex-col">
+                  <p class="text-white text-base">Desafio: 10 min de Meditação na Natureza</p>
+                  <div class="h-2 w-40 rounded-full bg-gray-600">
+                    <div class="h-full rounded-full bg-[var(--accent-orange)]" style="width: 20%;"></div>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-3xl text-gray-400">radio_button_unchecked</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg bg-[var(--dark-green)] p-4 shadow-lg">
+            <h3 class="mb-3 text-white text-xl font-bold">Recompensas Desbloqueadas</h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="flex flex-col items-center">
+                <span class="material-symbols-outlined text-5xl text-[var(--accent-yellow)]">emoji_events</span>
+                <p class="mt-1 text-center text-sm text-white">Medalha Vegana</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="material-symbols-outlined text-5xl text-[var(--accent-yellow)]">park</span>
+                <p class="mt-1 text-center text-sm text-white">Semente Mágica</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <span class="material-symbols-outlined text-5xl text-[var(--accent-yellow)]">forest</span>
+                <p class="mt-1 text-center text-sm text-white">Árvore Plantada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="flex w-full justify-center bg-[var(--background-dark)] px-4 py-4">
+        <div class="flex w-full max-w-xl justify-around rounded-full bg-[var(--dark-green)] px-4 py-2 shadow-xl">
+          <button class="flex flex-col items-center justify-center rounded-full bg-[#3d4f45] p-2 text-[var(--primary-green)]">
+            <span class="material-symbols-outlined text-2xl">event_note</span>
+            <span class="text-xs font-medium">Diário</span>
+          </button>
+          <button class="flex flex-col items-center justify-center rounded-full p-2 text-white transition-colors hover:bg-[#3d4f45]">
+            <span class="material-symbols-outlined text-2xl">calculate</span>
+            <span class="text-xs font-medium">Cálculo</span>
+          </button>
+          <button class="flex flex-col items-center justify-center rounded-full p-2 text-white transition-colors hover:bg-[#3d4f45]">
+            <span class="material-symbols-outlined text-2xl">calendar_month</span>
+            <span class="text-xs font-medium">Calendário</span>
+          </button>
+          <button class="flex flex-col items-center justify-center rounded-full p-2 text-white transition-colors hover:bg-[#3d4f45]">
+            <span class="material-symbols-outlined text-2xl">article</span>
+            <span class="text-xs font-medium">Notícias</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
