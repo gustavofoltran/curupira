@@ -26,7 +26,7 @@
       "activities": [
         {
           "name": "Gás de Cozinha (GLP) Residencial",
-          "activity_id": "fuel-type_liquefied_petroleum_gases_lpg-fuel_use_stationary_combustion",
+          "activity_id": "fuel-type_lpg-fuel_use_stationary",
           "unit_type": "Energy",
           "unit": "MMBTU",
           "source": "EPA",
@@ -35,18 +35,18 @@
         },
         {
           "name": "Gás Natural (Uso Industrial)",
-          "activity_id": "fuel-type_natural_gas-fuel_use_stationary_combustion",
+          "activity_id": "fuel-type_natural_gas-fuel_use_stationary",
           "unit_type": "Energy",
           "unit": "MMBTU",
           "source": "EPA",
           "region": "US",
-          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais"
+          "notes": "Fator para queima estacionária de gás natural em caldeiras e processos industriais "
         },
         {
           "name": "Diesel (Maquinário Agrícola/Industrial)",
           "activity_id": "fuel-type_diesel-fuel_use_mobile_locomotives",
           "unit_type": "Volume",
-          "unit": "gal (US)",
+          "unit": "gallon_us",
           "source": "EPA",
           "region": "US",
           "notes": "Fator de base para queima de diesel em maquinário móvel como tratores e equipamentos de construção"
@@ -66,10 +66,10 @@
       "category": "Transporte",
       "activities": [
         {
-          "name": "Ônibus Urbano ",
+          "name": "Ônibus Urbano",
           "activity_id": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
           "unit_type": "Passenger Over Distance",
-          "unit": "passenger-mile",
+          "unit": "passenger/mi",
           "source": "EPA",
           "region": "US",
           "notes": "Fator de base para ônibus"
@@ -93,22 +93,21 @@
           "notes": "Fator de base para carros a diesel"
         },
         {
-          "name": "Voo Doméstico (Classe Econômica)",
-          "activity_id": "passenger_flight-route_type_domestic-class_economy-distance_na",
+          "name": "Voo Doméstico",
+          "activity_id": "passenger_flight-route_type_domestic-aircraft_type_na-distance_na-class_na-rf_included-distance_uplift_included",
           "unit_type": "Passenger Over Distance",
-          "unit": "passenger-km",
+          "unit": "passenger/km",
           "source": "BEIS",
           "region": "GB",
           "notes": "Fator para voos domésticos"
         },
-        {
-          "name": "Metrô de São Paulo",
+        {"name": "Metrô de São Paulo",
           "activity_id": "metro_sao_paulo_",
           "unit_type": "Passenger Over Distance",
           "unit": "pkm",
           "source": "Metrô de São Paulo (Relatório de Sustentabilidade 2023)",
           "region": "BR-SP",
-          "notes": "(3 gCO2e/pkm), dado não é da climatiq"
+          "notes": " (3 gCO2e/pkm), dado não é da climatiq"
         }
       ]
     },
@@ -117,27 +116,27 @@
       "activities": [
         {
           "name": "Frete Marítimo (Navio de Contêiner)",
-          "activity_id": "freight_ship-vessel_type_container_ship-route_type_na-tonnage_na",
+          "activity_id": "sea_freight-vessel_type_container-route_type_na-vessel_length_na-tonnage_na-fuel_source_na",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
-          "source": "ADEME",
-          "region": "FR",
+          "unit": "t/km",
+          "source": "BEIS",
+          "region": "GB",
           "notes": "Fator de base para transporte de carga em navios de contêiner"
         },
         {
           "name": "Frete Aéreo (Longo Curso)",
           "activity_id": "freight_flight-route_type_international-distance_long_haul_gt_3700km-weight_na-rf_included-distance_uplift_included",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
+          "unit": "t/km",
           "source": "BEIS",
           "region": "GB",
           "notes": "Fator para frete aéreo internacional de longa distância"
         },
         {
           "name": "Frete Rodoviário (Caminhão Pesado)",
-          "activity_id": "road_freight-vehicle_type_hgv-fuel_source_na",
+          "activity_id": "freight_vehicle-vehicle_type_hgv_rigid-fuel_source_diesel-vehicle_weight_na-percentage_load_avg",
           "unit_type": "Weight Over Distance",
-          "unit": "tonne-km",
+          "unit": "t/km",
           "source": "GLEC",
           "region": "N_AMERICA",
           "notes": "Fator de base para frete com veículos pesados (Heavy Goods Vehicle)"
@@ -148,17 +147,17 @@
       "category": "Alimentação e Agropecuária",
       "activities": [
         {
-          "name": "Pecuária - Fermentação Entérica (Gado)",
+          "name": "Pecuária - Gado",
           "activity_id": "livestock_farming-type_beef",
           "unit_type": "Weight",
           "unit": "kg",
           "source": "WRAP",
-          "region": "GLOBAL",
-          "notes": "Fator global para carne bovina, talvez seja melhor utilizar dados da Embrapa!!!!!"
+          "region": "france",
+          "notes": "Fator frances para carne bovina, talvez seja melhor utilizar dados da Embrapa!!!!!"
         },
         {
           "name": "Consumo de Leite",
-          "activity_id": "food_beverages_tobacco-type_milk",
+          "activity_id": "consumer_goods-type_milk",
           "unit_type": "Weight",
           "unit": "kg",
           "source": "GEMIS",
@@ -181,18 +180,18 @@
       "activities": [
         {
           "name": "Tratamento de Água (Esgoto)",
-          "activity_id": "waste_water_and_sewage_sludge_treatment-type_water_treatment",
+          "activity_id": "water_treatment-type_na",
           "unit_type": "Volume",
           "unit": "m3",
           "source": "BEIS",
           "region": "GB",
-          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS"
+          "notes": "Fator para o tratamento de esgoto. Fonte: BEIS "
         },
         {
           "name": "Resíduos - Plástico (Aterro)",
           "activity_id": "waste-type_plastics-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
           "region": "GB",
           "notes": "Proxy para descarte de plástico em aterro"
@@ -201,7 +200,7 @@
           "name": "Resíduos - Papel e Papelão (Aterro)",
           "activity_id": "waste-type_paper_and_cardboard-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
           "region": "GB",
           "notes": "Proxy para descarte de papel em aterro"
@@ -210,7 +209,7 @@
           "name": "Resíduos Industriais (Aterro)",
           "activity_id": "waste-type_commercial_and_industrial-disposal_method_landfill",
           "unit_type": "Weight",
-          "unit": "tonne",
+          "unit": "t",
           "source": "BEIS",
           "region": "GB",
           "notes": "Fator de base para descarte de resíduos comerciais e industriais em aterro."
