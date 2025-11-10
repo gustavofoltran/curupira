@@ -7,7 +7,7 @@ Para executar o container, é preciso ter o Docker Compose (v2) instalado na má
 Para construir o container, utilize o comando:
 
 ```bash
-docker compose up
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
 ```
 
 ## Atualizações após Modificações
