@@ -1,37 +1,27 @@
-import react from '@vitejs/plugin-react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import react from '@vitejs/plugin-react-swc'
+import { componentTagger } from 'lovable-tagger'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
-import { ViteEjsPlugin } from 'vite-plugin-ejs'
 
 export default ({ mode }: any) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
   const basePath = process.env.VITE_PROXY_SERVER_FOLDER
 
   return defineConfig({
-    plugins: [
-      react({
-        jsxImportSource: '@emotion/react',
-        babel: {
-          plugins: ['@emotion/babel-plugin'],
-        },
-      }),
-      ViteEjsPlugin(),
-    ],
-    optimizeDeps: {
-      include: [
-        '@emotion/react',
-        '@emotion/styled',
-        '@mui/material/Tooltip',
-        '@mui/material/Unstable_Grid2',
-      ],
-    },
-    resolve: {
-      alias: [{ find: '~', replacement: path.resolve(__dirname, 'src') }],
-    },
     server: {
       port: 3000,
     },
     base: basePath,
+    plugins: [react(), mode === 'development' && componentTagger()].filter(
+      Boolean,
+    ),
+    resolve: {
+      alias: [
+        { find: '@', replacement: path.resolve(__dirname, './src') },
+        { find: '~', replacement: path.resolve(__dirname, './src') },
+      ],
+    },
     build: {
       rollupOptions: {
         output: {
