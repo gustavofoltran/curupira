@@ -1,0 +1,26 @@
+# Dependencies
+node_modules
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist
+build
+.vite
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Generated files
+*.d.ts
+
+# Telas (HTML antigas)
+Telas/
+
+# Public assets
+public/
+
