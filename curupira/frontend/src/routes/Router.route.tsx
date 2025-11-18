@@ -1,40 +1,26 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { DefaultLayout } from '~/layouts/default/Default.layout'
-import { HomePage } from '~/pages/home/Home.page'
-import modules from './data/modules.data'
-import PrivateRoute from './Private.route'
+import { AppLayout } from '@/components/AppLayout';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ActivitiesListPage } from '~/pages/activities/ActivitiesList.page';
+import { CategoriesListPage } from '~/pages/categories/CategoriesList.page';
+import { EmissionCalculatorPage } from '~/pages/emission/EmissionCalculator.page';
+import { HomePage } from '~/pages/home/Home.page';
 
-const Router = () => {
+export const AppRoutes = () => {
   return (
     <Routes>
-      {/* dashboard */}
-      <Route
-        path="/"
-        element={
-          <PrivateRoute>
-            <DefaultLayout />
-          </PrivateRoute>
-        }
-      >
-        <Route path="/home" element={<HomePage />} />
-        {/* Rotas dos módulos */}
-        {modules.map((module, index) => (
-          <Route key={index} path={module.path}>
-            {module.submodules.map((submodule, index) => {
-              return (
-                <Route
-                  key={index}
-                  path={submodule.path.replace('/', '')}
-                  element={submodule.component}
-                />
-              )
-            })}
-          </Route>
-        ))}
+      <Route path="/" element={<AppLayout />}>
+        <Route path="/" element={<HomePage />} />
+
+        {/* Activities Routes */}
+        <Route path="/activities" element={<ActivitiesListPage />} />
+
+        {/* Categories Routes */}
+        <Route path="/categories" element={<CategoriesListPage />} />
+
+        {/* Emission Calculator */}
+        <Route path="/emission-calculator" element={<EmissionCalculatorPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  )
-}
-
-export default Router
+  );
+};

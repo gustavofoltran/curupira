@@ -1,11 +1,187 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>DEFAULT Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Curupira - Sistema de Gestão de Atividades e Cálculo de Emissões de
+      Carbono
+    </title>
+    <meta
+      name="title"
+      content="Curupira - Sistema de Gestão de Atividades e Cálculo de Emissões de Carbono"
+    />
+    <meta
+      name="description"
+      content="Plataforma completa para gerenciar atividades que geram emissões de carbono, calcular pegada de carbono e monitorar impactos ambientais. Sistema de gestão sustentável e responsável."
+    />
+    <meta
+      name="keywords"
+      content="emissões de carbono, pegada de carbono, gestão ambiental, sustentabilidade, cálculo de emissões, CO2, mudanças climáticas, gestão de atividades, impacto ambiental, carbono neutro, compensação de carbono, inventário de emissões, gestão sustentável, meio ambiente, responsabilidade ambiental, atividades sustentáveis, monitoramento de carbono, redução de emissões"
+    />
+    <meta name="author" content="Curupira" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="Portuguese" />
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
+    <meta name="revisit-after" content="1 days" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://curupira.com.br/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://curupira.com.br/" />
+    <meta
+      property="og:title"
+      content="Curupira - Gestão de Emissões de Carbono e Sustentabilidade"
+    />
+    <meta
+      property="og:description"
+      content="Sistema completo para gerenciar atividades, calcular emissões de carbono e monitorar impactos ambientais. Ferramenta essencial para empresas e organizações comprometidas com a sustentabilidade."
+    />
+    <meta
+      property="og:image"
+      content="https://curupira.com.br/images/logo.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Curupira" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://curupira.com.br/" />
+    <meta
+      name="twitter:title"
+      content="Curupira - Gestão de Emissões de Carbono"
+    />
+    <meta
+      name="twitter:description"
+      content="Plataforma completa para gerenciar atividades e calcular emissões de carbono. Sistema de gestão sustentável e responsável."
+    />
+    <meta
+      name="twitter:image"
+      content="https://curupira.com.br/images/logo.png"
+    />
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Curupira",
+        "url": "https://curupira.com.br",
+        "description": "Sistema de gestão de atividades e cálculo de emissões de carbono. Plataforma completa para monitorar, calcular e gerenciar a pegada de carbono de atividades diversas.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "featureList": [
+          "Gestão de atividades que geram emissões",
+          "Categorização de atividades",
+          "Calculadora de emissão de carbono",
+          "Dashboard com estatísticas",
+          "Monitoramento de pegada de carbono",
+          "Relatórios de impacto ambiental"
+        ],
+        "creator": {
+          "@type": "Organization",
+          "name": "Curupira"
+        },
+        "inLanguage": "pt-BR",
+        "keywords": "emissões de carbono, pegada de carbono, gestão ambiental, sustentabilidade, cálculo de CO2, gestão de atividades"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Curupira",
+        "url": "https://curupira.com.br",
+        "logo": "https://curupira.com.br/images/logo.png",
+        "description": "Plataforma especializada em gestão de emissões de carbono e sustentabilidade ambiental",
+        "email": "contato@curupira.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/curupira",
+          "https://twitter.com/curupira"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Curupira",
+        "url": "https://curupira.com.br",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://curupira.com.br/activities?search={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- Software Application Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Curupira",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "description": "Sistema completo para gestão de atividades e cálculo de emissões de carbono. Gerencie atividades, categorize por tipo, calcule emissões e monitore impactos ambientais.",
+        "featureList": [
+          "Cadastro e gestão de atividades",
+          "Organização por categorias",
+          "Calculadora de emissão de carbono",
+          "Dashboard com métricas e estatísticas",
+          "Relatórios de impacto ambiental",
+          "Monitoramento de pegada de carbono"
+        ],
+        "screenshot": "https://curupira.com.br/images/screenshot.png"
+      }
+    </script>
+
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
