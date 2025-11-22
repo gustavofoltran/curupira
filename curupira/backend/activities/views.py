@@ -1,10 +1,11 @@
-from rest_framework import viewsets, status
+from core.API.api_requester import APIRequester
+from rest_framework import status, viewsets
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+
 from .models import Activity, Category
 from .serializers import ActivitySerializer, CategorySerializer
-from core.API.api_requester import APIRequester
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -15,6 +16,9 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ActivityViewSet(viewsets.ModelViewSet):
     queryset = Activity.objects.select_related("category").all()
     serializer_class = ActivitySerializer
+    
+    def get_queryset(self):
+        return Activity.objects.select_related("category").all()
 
 
 @api_view(['POST'])
