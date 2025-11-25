@@ -47,7 +47,7 @@ class AccountAPITest(TestCase):
             'password': 'wrongpass'
         }, content_type='application/json')
         self.assertEqual(login_wrong_pass.status_code, 401)
-        self.assertIn('detail', login_wrong_pass.json())
+        self.assertEqual(login_wrong_pass.json(), {"detail": "Invalid credentials"})
 
         # Tenta login com username errado
         login_wrong_user = self.client.post('/api/account/login/', {
@@ -55,4 +55,4 @@ class AccountAPITest(TestCase):
             'password': 'testpass456'
         }, content_type='application/json')
         self.assertEqual(login_wrong_user.status_code, 401)
-        self.assertIn('detail', login_wrong_user.json())
+        self.assertEqual(login_wrong_pass.json(), {"detail": "Invalid credentials"})
