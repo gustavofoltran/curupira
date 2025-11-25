@@ -2,7 +2,6 @@ import jwt
 from django.conf import settings
 from datetime import datetime, timedelta, timezone
 
-
 def create_jwt_token(user_id, exp_hours: int = 1) -> str:
     """Create a JWT token encoding the user_id and expiration time.
 
@@ -15,7 +14,6 @@ def create_jwt_token(user_id, exp_hours: int = 1) -> str:
         "exp": now + timedelta(hours=exp_hours),
     }
     token = jwt.encode(payload, settings.SECRET_KEY, algorithm="HS256")
-    # PyJWT >= 2.x returns a str
     if isinstance(token, bytes):
         token = token.decode("utf-8")
     return token
