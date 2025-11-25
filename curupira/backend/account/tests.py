@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from account.models import User
+from account.models import SearchHistory, User
 import jwt
 from django.conf import settings
 
@@ -9,7 +9,7 @@ class AccountAPITest(TestCase):
 
     def test_register_and_login(self):
         # Teste de registro
-        reg = self.client.post('/api/account/register/', {
+        reg = self.client.post('/api/register/', {
             'username': 'testuser',
             'password': 'testpass123',
             'email': 'test@example.com'
@@ -18,7 +18,7 @@ class AccountAPITest(TestCase):
         self.assertTrue(User.objects.filter(username='testuser').exists())
 
         # Teste de login
-        login = self.client.post('/api/account/login/', {
+        login = self.client.post('/api/login/', {
             'username': 'testuser',
             'password': 'testpass123'
         }, content_type='application/json')
@@ -34,7 +34,7 @@ class AccountAPITest(TestCase):
 
     def test_login_invalid_credentials(self):
         # Registra um usuário válido
-        reg = self.client.post('/api/account/register/', {
+        reg = self.client.post('/api/register/', {
             'username': 'testuser2',
             'password': 'testpass456',
             'email': 'test2@example.com'
@@ -42,7 +42,7 @@ class AccountAPITest(TestCase):
         self.assertEqual(reg.status_code, 201)
 
         # Tenta login com senha errada
-        login_wrong_pass = self.client.post('/api/account/login/', {
+        login_wrong_pass = self.client.post('/api/login/', {
             'username': 'testuser2',
             'password': 'wrongpass'
         }, content_type='application/json')
@@ -50,7 +50,7 @@ class AccountAPITest(TestCase):
         self.assertEqual(login_wrong_pass.json(), {"detail": "Invalid credentials"})
 
         # Tenta login com username errado
-        login_wrong_user = self.client.post('/api/account/login/', {
+        login_wrong_user = self.client.post('/api/login/', {
             'username': 'nouser',
             'password': 'testpass456'
         }, content_type='application/json')
