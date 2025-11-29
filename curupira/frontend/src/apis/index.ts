@@ -3,20 +3,27 @@
  */
 
 // APIs
-export { activitiesApi } from './activities.api'
-export { activityEmissionApi } from './activityEmission.api'
-export { categoriesApi } from './categories.api'
-export { testApi } from './test.api'
+export { accountApi } from './account.api';
+export { activitiesApi } from './activities.api';
+export { activityEmissionApi } from './activityEmission.api';
+export { categoriesApi } from './categories.api';
+export { testApi } from './test.api';
 
 // Types
 export type {
   Activity,
   ActivityData,
   ActivityEmissionParams,
+  AuthResponse,
   Category,
   ConstituentGases,
   EmissionFactor,
   EmissionResponse,
+  LoginPayload,
   PatchedActivity,
   PatchedCategory,
-} from './types'
+  RegisterPayload,
+  SearchHistoryItem,
+  SearchHistoryResponse,
+  UserProfile,
+} from './types';

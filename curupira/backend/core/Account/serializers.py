@@ -1,5 +1,6 @@
+from account.models import SearchHistory, User
 from rest_framework import serializers
-from account.models import User, SearchHistory
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=6)
@@ -17,13 +18,21 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
+
 class SearchHistorySerializer(serializers.ModelSerializer):
     search_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
-    
+
     class Meta:
         model = SearchHistory
-        fields = ('id', 'search_time', 'activity_id', 'value1', 'value2', 'response')
+        fields = ("id", "search_time", "activity_id", "value1", "value2", "response")
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "username", "email", "created_at", "last_access")

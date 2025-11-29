@@ -105,3 +105,68 @@ export interface EmissionResponse {
   audit_trail: string
   notices: string[]
 }
+
+/**
+ * Payload para registro de usuário
+ */
+export interface RegisterPayload {
+  username: string
+  password: string
+  email: string
+}
+
+/**
+ * Payload para login
+ */
+export interface LoginPayload {
+  username: string
+  password: string
+}
+
+/**
+ * Resposta de autenticação (login)
+ */
+export interface AuthResponse {
+  token: string
+  expires_in: number
+}
+
+/**
+ * Item de histórico de busca de emissões
+ */
+export interface SearchHistoryItem {
+  id: number
+  search_time: string
+  activity_id: number
+  value1: number | null
+  value2: number | null
+  // O backend armazena a mesma estrutura retornada pela API de emissão;
+  // usamos um tipo mais flexível para tolerar variações.
+  response: EmissionResponse | Record<string, unknown> | null
+}
+
+/**
+ * Resposta paginada do histórico de busca
+ */
+export interface SearchHistoryResponse {
+  count: number
+  total_pages: number
+  current_page: number
+  page_size: number
+  next_page: number | null
+  previous_page: number | null
+  results: SearchHistoryItem[]
+}
+
+/**
+ * Perfil básico do usuário autenticado
+ */
+export interface UserProfile {
+  id: number
+  username: string
+  email: string
+  created_at: string
+  last_access: string | null
+}
+
+
