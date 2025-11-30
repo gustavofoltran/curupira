@@ -1,11 +1,13 @@
+from account.models import SearchHistory, User
+from django.core.paginator import EmptyPage, Paginator
+from django.utils import timezone
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
-from .serializers import RegisterSerializer, LoginSerializer, SearchHistorySerializer
-from account.models import User, SearchHistory
+
 from .jwt_utils import create_jwt_token, decode_jwt_token
-from django.utils import timezone
-from django.core.paginator import Paginator, EmptyPage
+from .serializers import (LoginSerializer, RegisterSerializer,
+                          SearchHistorySerializer, UserSerializer)
 
 
 @api_view(["POST"])
@@ -13,7 +15,10 @@ def register(request):
     serializer = RegisterSerializer(data=request.data)
     if serializer.is_valid():
         user = serializer.save()
-        return Response({"id": user.id, "username": user.username, "email": user.email}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"id": user.id, "username": user.username, "email": user.email},
+            status=status.HTTP_201_CREATED,
+        )
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -39,6 +44,37 @@ def login(request):
     user.save(update_fields=["last_access"])  # update last access timestamp
 
     return Response({"token": token, "expires_in": 3600})
+
+
+@api_view(["GET"])
+def me(request):
+    jwt_token = request.headers.get("Authorization")
+    if not jwt_token or not jwt_token.startswith("Bearer "):
+        return Response(
+            {"detail": "Token de autenticação necessário"},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
+
+    try:
+        jwt_token = jwt_token.split(" ", 1)[1]
+        payload = decode_jwt_token(jwt_token)
+        user_id = payload.get("user_id")
+        user = User.objects.filter(id=user_id).first()
+
+        if not user:
+            return Response(
+                {"detail": "Usuário não encontrado"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
+    except Exception as e:
+        return Response(
+            {"detail": f"Erro ao buscar usuário: {str(e)}"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
 
 @api_view(['GET'])
 def user_search_history(request):

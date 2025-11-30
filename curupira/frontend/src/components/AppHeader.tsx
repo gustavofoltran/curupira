@@ -1,23 +1,46 @@
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { APP_DOMAIN, APP_NAME } from '@/constants/app';
 import { cn } from '@/lib/utils';
-import { Activity, Calculator, FolderTree, LayoutDashboard, Maximize2, Minimize2, Moon, Sun } from 'lucide-react';
+import {
+  Activity,
+  Calculator,
+  FolderTree,
+  History,
+  LayoutDashboard,
+  Maximize2,
+  Minimize2,
+  Moon,
+  Sun,
+} from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '~/contexts/AuthContext';
 
 const menuItems = [
   { id: 'menu-dashboard', title: 'Dashboard', url: '/', icon: LayoutDashboard },
   { id: 'menu-activities', title: 'Atividades', url: '/activities', icon: Activity },
   { id: 'menu-categories', title: 'Categorias', url: '/categories', icon: FolderTree },
   { id: 'menu-emission-calculator', title: 'Calculadora', url: '/emission-calculator', icon: Calculator },
+  { id: 'menu-history', title: 'Histórico', url: '/history', icon: History },
 ];
 
 export function AppHeader() {
   const { theme, setTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const { isAuthenticated, logout, user } = useAuth();
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -43,13 +66,16 @@ export function AppHeader() {
   };
 
   const handleLogout = () => {
-    // @ TODO: Implement logout
+    logout();
+    navigate('/login');
   };
 
   const getInitials = (email?: string) => {
     if (!email) return 'U';
     return email.charAt(0).toUpperCase();
   };
+
+  const visibleMenuItems = menuItems.filter((item) => item.id !== 'menu-history' || isAuthenticated);
 
   return (
     <header className="h-16 border-b bg-card flex items-center justify-between px-6 sticky top-0 z-50 backdrop-blur-sm bg-card/95">
@@ -68,7 +94,7 @@ export function AppHeader() {
 
       {/* Navegação */}
       <nav className="flex items-center gap-1 flex-1 justify-center">
-        {menuItems.map((item) => {
+        {visibleMenuItems.map((item) => {
           const Icon = item.icon;
           const isActive =
             location.pathname === item.url || (item.url !== '/' && location.pathname.startsWith(item.url));
@@ -122,6 +148,44 @@ export function AppHeader() {
             <p>{theme === 'dark' ? 'Modo claro' : 'Modo escuro'}</p>
           </TooltipContent>
         </Tooltip>
+
+        {isAuthenticated && user ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full border px-2 py-1 hover:bg-accent transition-colors pr-4"
+              >
+                <Avatar className="h-8 w-8">
+                  <AvatarFallback>{getInitials(user.email)}</AvatarFallback>
+                </Avatar>
+                <span className="hidden sm:inline text-sm font-medium max-w-[120px] truncate">{user.username}</span>
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>
+                <div className="flex flex-col">
+                  <span className="font-medium">{user.username}</span>
+                  <span className="text-xs text-muted-foreground truncate">{user.email}</span>
+                </div>
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="text-red-600 dark:text-red-500 cursor-pointer" onClick={handleLogout}>
+                Sair
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              navigate('/login');
+            }}
+          >
+            Entrar
+          </Button>
+        )}
       </div>
     </header>
   );
