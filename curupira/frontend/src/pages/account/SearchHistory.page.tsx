@@ -240,7 +240,7 @@ export function SearchHistoryPage() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mt-4">
             <span className="text-xs text-muted-foreground">
               Página {data.current_page} de {data.total_pages} — {data.count} registros
             </span>

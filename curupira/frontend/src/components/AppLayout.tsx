@@ -8,7 +8,9 @@ export function AppLayout() {
   const maxWidth = location.pathname.includes('blog-faq')
     ? 'w-full'
     : 'max-w-[1600px]'
-  const padding = location.pathname.includes('blog-faq') ? '!p-0' : 'p-8'
+  const padding = location.pathname.includes('blog-faq')
+    ? '!p-0'
+    : 'px-4 py-4 sm:px-6 lg:px-8'
 
   return (
     <div className="min-h-screen flex flex-col w-full">
