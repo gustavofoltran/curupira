@@ -1,13 +1,9 @@
 #!/bin/bash
 set -e
 
+python wait-for-db.py
+
 echo "Applying migrations..."
-python manage.py makemigrations --noinput || true
 python manage.py migrate --noinput
 
-echo "Running tests..."
-pytest 
-
-EXIT_CODE=$?
-echo "Finishing tests and terminating container"
-exit $EXIT_CODE
+python manage.py runserver 0.0.0.0:8000
