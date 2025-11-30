@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { APP_DOMAIN, APP_NAME } from '@/constants/app';
 import { cn } from '@/lib/utils';
@@ -18,6 +19,7 @@ import {
   History,
   LayoutDashboard,
   Maximize2,
+  Menu,
   Minimize2,
   Moon,
   Sun,
@@ -26,6 +28,7 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '~/contexts/AuthContext';
+import { useIsMobile } from '~/hooks/use-mobile';
 
 const menuItems = [
   { id: 'menu-dashboard', title: 'Dashboard', url: '/', icon: LayoutDashboard },
@@ -40,6 +43,7 @@ export function AppHeader() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const isMobile = useIsMobile();
   const { isAuthenticated, logout, user } = useAuth();
 
   useEffect(() => {
@@ -78,9 +82,60 @@ export function AppHeader() {
   const visibleMenuItems = menuItems.filter((item) => item.id !== 'menu-history' || isAuthenticated);
 
   return (
-    <header className="h-16 border-b bg-card flex items-center justify-between px-6 sticky top-0 z-50 backdrop-blur-sm bg-card/95">
-      {/* Logo e Nome */}
-      <div className="flex items-center gap-4">
+    <header className="h-16 border-b bg-card flex items-center justify-between px-4 sm:px-6 sticky top-0 z-50 backdrop-blur-sm bg-card/95">
+      {/* Menu mobile + Logo e Nome */}
+      <div className="flex items-center gap-2 sm:gap-4">
+        {isMobile && (
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-9 w-9">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Abrir menu de navegação</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0">
+              <SheetHeader className="border-b px-6 py-4">
+                <SheetTitle>
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <Activity className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-base leading-none">{APP_NAME}</p>
+                      <p className="text-xs text-muted-foreground leading-none mt-1">{APP_DOMAIN}</p>
+                    </div>
+                  </div>
+                </SheetTitle>
+              </SheetHeader>
+
+              <nav className="px-4 py-4 space-y-1">
+                {visibleMenuItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive =
+                    location.pathname === item.url || (item.url !== '/' && location.pathname.startsWith(item.url));
+
+                  return (
+                    <Link
+                      key={`mobile-${item.id}`}
+                      id={item.id}
+                      to={item.url}
+                      className={cn(
+                        'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                        isActive
+                          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                          : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground',
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        )}
+
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
             <Activity className="h-4 w-4 text-white" />
@@ -93,7 +148,7 @@ export function AppHeader() {
       </div>
 
       {/* Navegação */}
-      <nav className="flex items-center gap-1 flex-1 justify-center">
+      <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
         {visibleMenuItems.map((item) => {
           const Icon = item.icon;
           const isActive =
@@ -121,7 +176,7 @@ export function AppHeader() {
       <div className="flex items-center gap-3">
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-9 w-9" onClick={toggleFullscreen}>
+            <Button variant="ghost" size="icon" className="h-9 w-9 hidden sm:inline-flex" onClick={toggleFullscreen}>
               {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
               <span className="sr-only">Toggle fullscreen</span>
             </Button>
