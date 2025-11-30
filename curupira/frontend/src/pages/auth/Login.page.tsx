@@ -10,7 +10,7 @@ import background from '~/assets/images/background-login.jpg';
 import { useAuth } from '~/contexts/AuthContext';
 
 export function LoginPage() {
-  const [form, setForm] = useState<LoginPayload>({ username: '', password: '' });
+  const [form, setForm] = useState<LoginPayload>({ email: '', password: '' });
   const [registerForm, setRegisterForm] = useState<RegisterPayload>({
     username: '',
     email: '',
@@ -61,7 +61,7 @@ export function LoginPage() {
         description: 'Você já pode acessar a plataforma. Fazendo login automaticamente...',
       });
 
-      await login({ username: registerForm.username, password: registerForm.password });
+      await login({ email: registerForm.email, password: registerForm.password });
       navigate('/');
     } catch (error: any) {
       const detail =
@@ -101,7 +101,7 @@ export function LoginPage() {
           <p className="text-sm text-muted-foreground mb-6">
             {isRegisterMode
               ? 'Preencha os dados abaixo para criar sua conta na plataforma.'
-              : 'Utilize seu usuário e senha cadastrados para acessar o sistema.'}
+              : 'Utilize seu e-mail e senha cadastrados para acessar o sistema.'}
           </p>
 
           {isRegisterMode ? (
@@ -148,12 +148,13 @@ export function LoginPage() {
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <Label htmlFor="username">Usuário</Label>
+                <Label htmlFor="email">E-mail</Label>
                 <Input
-                  id="username"
-                  value={form.username}
-                  onChange={handleChange('username')}
-                  placeholder="Digite seu usuário"
+                  id="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange('email')}
+                  placeholder="Digite seu e-mail"
                   required
                 />
               </div>
