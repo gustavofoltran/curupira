@@ -111,15 +111,15 @@ export interface EmissionResponse {
  */
 export interface RegisterPayload {
   username: string
-  password: string
   email: string
+  password: string
 }
 
 /**
  * Payload para login
  */
 export interface LoginPayload {
-  username: string
+  email: string
   password: string
 }
 

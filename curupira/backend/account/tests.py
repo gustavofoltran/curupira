@@ -33,7 +33,7 @@ class AccountAPITest(TestCase):
 
         # Teste de login
         login = self.client.post('/api/login/', {
-            'username': 'testuser',
+            'email': 'test@example.com',
             'password': 'testpass123'
         }, content_type='application/json')
         self.assertEqual(login.status_code, 200)
@@ -57,15 +57,15 @@ class AccountAPITest(TestCase):
 
         # Tenta login com senha errada
         login_wrong_pass = self.client.post('/api/login/', {
-            'username': 'testuser2',
+            'email': 'test2@example.com',
             'password': 'wrongpass'
         }, content_type='application/json')
         self.assertEqual(login_wrong_pass.status_code, 401)
         self.assertEqual(login_wrong_pass.json(), {"detail": "Invalid credentials"})
 
-        # Tenta login com username errado
+        # Tenta login com email errado
         login_wrong_user = self.client.post('/api/login/', {
-            'username': 'nouser',
+            'email': 'nouser@example.com',
             'password': 'testpass456'
         }, content_type='application/json')
         self.assertEqual(login_wrong_user.status_code, 401)
@@ -96,7 +96,7 @@ class AccountAPITest(TestCase):
         }, content_type='application/json')
         self.assertEqual(reg.status_code, 201)
         login = self.client.post('/api/login/', {
-            'username': 'searchuser',
+            'email': 'search@example.com',
             'password': 'searchpass'
         }, content_type='application/json')
         self.assertEqual(login.status_code, 200)
@@ -129,7 +129,7 @@ class AccountAPITest(TestCase):
         }, content_type='application/json')
         self.assertEqual(reg.status_code, 201)
         login = self.client.post('/api/login/', {
-            'username': 'historyuser',
+            'email': 'history@example.com',
             'password': 'historypass'
         }, content_type='application/json')
         self.assertEqual(login.status_code, 200)
@@ -189,7 +189,7 @@ class AccountAPITest(TestCase):
         }, content_type='application/json')
         self.assertEqual(reg.status_code, 201)
         login = self.client.post('/api/login/', {
-            'username': 'badparamuser',
+            'email': 'badparam@example.com',
             'password': 'badparampass'
         }, content_type='application/json')
         self.assertEqual(login.status_code, 200)
